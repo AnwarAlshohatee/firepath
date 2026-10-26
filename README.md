@@ -6,9 +6,8 @@ Built using the **MVC architecture**, the application demonstrates financial cal
 
 ## Project Preview
 
-![FIREPath Application Screenshot](screenshots/firepath-preview.png)
+![FIREPath Application Screenshot](screenshot/firepathcalc.png)
 
-*Screenshot of the FIREPath application.*
 
 ## Features
 
