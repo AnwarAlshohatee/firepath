@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Scenarios | FIREPath</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <nav>
+    <a href="/">FIREPath</a>
+    <a href="/scenarios">Saved Scenarios</a>
+  </nav>
+
+  <main class="container">
+  <div class="card">
+    <h1>FIRE Calculator</h1>
+
+    <a href="/">New Calculation</a>
+
+  <% if (scenarios.length===0) { %>
+    <p>No scenarios saved yet.</p>
+    <% } %>
+
+      <% scenarios.forEach(scenario=> { %>
+        <div>
+          <h3>FIRE Target: $<%= scenario.fireNumber.toLocaleString() %>
+          </h3>
+
+          <p>Current Age: <%= scenario.age %>
+          </p>
+
+          <p>
+            Estimated Retirement Age:
+            <%= scenario.retirementAge ?? "Not reached" %>
+          </p>
+
+          <a href="/scenarios/<%= scenario._id %>">View</a>
+          <a href="/scenarios/<%= scenario._id %>/edit">Edit</a>
+
+          <form action="/scenarios/<%= scenario._id %>/delete" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+        <hr>
+        <% }) %>
+  </div>
+</main>
+  
+</body>
+
+</html>

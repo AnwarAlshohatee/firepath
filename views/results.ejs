@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIREPath Results</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Your FIREPath Results</h1>
+
+  <h2>FIRE Target: <%= formattedFireNumber %></h2>
+
+  <% if (reachedGoal) { %>
+    <p>Estimated Retirement Age: <%= retirementAge %></p>
+    <p>Years Until FIRE: <%= yearsToRetirement %></p>
+  <% } else { %>
+    <p>Target not reached within 100 years.</p>
+  <% } %>
+
+  <p>Annual Expenses: $<%= scenario.annualExpenses.toLocaleString() %></p>
+  <p>Current Investments: $<%= scenario.currentSavings.toLocaleString() %></p>
+  <p>Annual Contributions: $<%= scenario.annualContribution.toLocaleString() %></p>
+  <p>Expected Annual Return: <%= scenario.annualReturn %>%</p>
+
+  <a href="/">New Calculation</a>
+  <a href="/scenarios">Saved Scenarios</a>
+  <a href="/scenarios/<%= scenario._id %>/edit">Edit Scenario</a>
+
+  <form action="/scenarios/<%= scenario._id %>/delete" method="POST">
+    <button type="submit">Delete Scenario</button>
+  </form>
+
+  <p><small>Estimates are illustrative, not financial advice.</small></p>
+</body>
+</html>

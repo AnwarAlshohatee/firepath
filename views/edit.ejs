@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Scenario | FIREPath</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Edit FIRE Scenario</h1>
+
+  <form action="/scenarios/<%= scenario._id %>/edit" method="POST">
+
+    <label>Current Age</label>
+    <input type="number" name="age"
+      value="<%= scenario.age %>" min="18" max="100" required>
+
+    <label>Annual Retirement Expenses</label>
+    <input type="number" name="annualExpenses"
+      value="<%= scenario.annualExpenses %>" min="0.01" step="0.01" required>
+
+    <label>Current Investments</label>
+    <input type="number" name="currentSavings"
+      value="<%= scenario.currentSavings %>" min="0" step="0.01" required>
+
+    <label>Annual Contributions</label>
+    <input type="number" name="annualContribution"
+      value="<%= scenario.annualContribution %>" min="0" step="0.01" required>
+
+    <label>Expected Annual Return (%)</label>
+    <input type="number" name="annualReturn"
+      value="<%= scenario.annualReturn %>" min="0" max="20" step="0.1" required>
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  <a href="/scenarios">Cancel</a>
+</body>
+</html>
