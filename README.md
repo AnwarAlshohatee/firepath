@@ -8,6 +8,9 @@ Built using the **MVC architecture**, the application demonstrates financial cal
 
 ![FIREPath Application Screenshot](screenshot/firepathcalc.PNG)
 
+## Live Demo
+
+**Try the application:** [FIREPath Live Demo](https://firepath-5g5y.onrender.com)
 
 ## Features
 
